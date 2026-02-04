@@ -8,4 +8,5 @@ public class ConfigsGlobal {
     public static String PASSWORD = PropertiesHelper.getValue("PASSWORD");
     public static String accept = PropertiesHelper.getValue("accept");
     public static String contentType = PropertiesHelper.getValue("contentType");
+    public static String messageWrongMethod = PropertiesHelper.getValue("messageWrongMethod");
 }
