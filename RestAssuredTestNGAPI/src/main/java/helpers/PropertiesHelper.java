@@ -1,7 +1,11 @@
 package helpers;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Properties;
@@ -95,6 +99,25 @@ public class PropertiesHelper {
             out.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
+        }
+    }
+    /**
+    * Đọc file JSON và lấy test data theo tên test case
+        * @param filePath - đường dẫn file JSON
+     * @param testCaseName - tên test case cần lấy
+     */
+    public static String getJsonValue(String filePath, String testCaseName) {
+        try {
+            String linkJsonFile = SystemHelper.getCurrentDir() + filePath;
+            FileReader reader = new FileReader(linkJsonFile);
+            Gson gson = new Gson();
+            JsonObject jsonData = gson.fromJson(reader, JsonObject.class);
+            reader.close();
+
+            return jsonData.get(testCaseName).toString();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
         }
     }
 

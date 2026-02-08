@@ -1,4 +1,22 @@
 {
-  "username": "phucnv06",
-  "password": "Demo@123"
+  "success": {
+    "username": "phucnv06",
+    "password": "Demo@123"
+  },
+  "unsuccessUsernameNull": {
+    "username": null,
+    "password": "Demo@123"
+  },
+  "unsuccessUsernameEmpty": {
+    "username": "",
+    "password": "Demo@123"
+  },
+  "unsuccessUsernameSpace": {
+    "username": " ",
+    "password": "Demo@123"
+  },
+  "unsuccessUsernameExist": {
+    "username": "phucnv010",
+    "password": "Demo@123"
+  }
 }
