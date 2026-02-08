@@ -1,0 +1,58 @@
+############################
+# IntelliJ IDEA
+############################
+.idea/
+*.iml
+*.ipr
+*.iws
+
+############################
+# Maven
+############################
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+
+############################
+# Test Reports
+############################
+test-output/          # TestNG
+surefire-reports/     # Maven Surefire
+failsafe-reports/    # Maven Failsafe
+allure-results/
+allure-report/
+
+############################
+# Logs
+############################
+*.log
+
+############################
+# Environment / Secrets
+############################
+.env
+*.env
+config-local.yml
+config-local.properties
+
+############################
+# OS
+############################
+.DS_Store
+Thumbs.db
+
+############################
+# Temporary files
+############################
+*.tmp
+*.temp
+*.swp
+
+############################
+# Coverage
+############################
+coverage/
+jacoco/
+jacoco.exec
