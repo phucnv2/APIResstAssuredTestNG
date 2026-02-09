@@ -18,5 +18,37 @@
   "unsuccessUsernameExist": {
     "username": "phucnv010",
     "password": "Demo@123"
+  },
+  "unsuccessPasswordNull": {
+    "username": "phucnv06",
+    "password": null
+  },
+  "unsuccessPasswordEmpty": {
+    "username": "phucnv06",
+    "password": ""
+  },
+  "unsuccessPasswordSpace": {
+    "username": "phucnv06",
+    "password": " "
+  },
+  "unsuccessPasswordWrong": {
+    "username": "phucnv06",
+    "password": "Demo@124"
+  },
+  "UsernamePasswordNull": {
+    "username": null,
+    "password": null
+  },
+  "UsernamePasswordSpace": {
+    "username": " ",
+    "password": " "
+  },
+  "UsernamePasswordEmpty": {
+    "username": "",
+    "password": ""
+  },
+  "UsernamePasswordWrong": {
+    "username": "phucnv07",
+    "password": "Demo@124"
   }
 }
