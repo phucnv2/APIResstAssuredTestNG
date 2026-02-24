@@ -120,5 +120,29 @@ public class PropertiesHelper {
             return null;
         }
     }
+    /**
+     * Lấy giá trị của một field cụ thể trong test case
+     * @param filePath - đường dẫn file JSON
+     * @param testCaseName - tên test case (ví dụ: "success")
+     * @param fieldName - tên field cần lấy (ví dụ: "username", "email")
+     */
+    public static String getJsonFieldValue(String filePath, String testCaseName, String fieldName) {
+        try {
+            String linkJsonFile = SystemHelper.getCurrentDir() + filePath;
+            FileReader reader = new FileReader(linkJsonFile);
+            Gson gson = new Gson();
+            JsonObject jsonData = gson.fromJson(reader, JsonObject.class);
+            reader.close();
 
+            // Lấy test case object
+            JsonObject testCase = jsonData.getAsJsonObject(testCaseName);
+
+            // Lấy giá trị field cụ thể
+            return testCase.get(fieldName).getAsString();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
 }
