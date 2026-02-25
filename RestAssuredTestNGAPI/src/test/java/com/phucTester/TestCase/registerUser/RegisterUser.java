@@ -25,14 +25,24 @@ public class RegisterUser {
         response.prettyPrint();
         response.then().statusCode(200);
         JsonPath jsonPath = response.jsonPath();
-        String getUser = jsonPath.get("username");
+        String getUser = jsonPath.get("response.username");
         String getPassword = PropertiesHelper.getJsonFieldValue(fileloginData, "success", "password");
-    // login sau khi register
+        System.out.println("--------------------");
+
+        // login sau khi register
+        String body = "{\n" +
+            "  \"username\": \"" + getUser + "\",\n" +
+            "  \"password\": \"" + getPassword + "\"\n" +
+            "}";
         RequestSpecification requestLogin = given();
         requestLogin.baseUri(ConfigsGlobal.URI)
             .basePath("/login")
             .accept("application/json")
             .contentType("application/json")
-            .body("");
+            .body(body);
+        Response responseLogin = requestLogin.when().post();
+        System.out.println(body);
+        responseLogin.prettyPrint();
+        responseLogin.then().statusCode(200);
     }
 }

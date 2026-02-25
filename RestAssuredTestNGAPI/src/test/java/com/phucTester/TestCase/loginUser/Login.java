@@ -142,7 +142,7 @@ public class Login {
         Response response = request.when().post();
         Assert.assertEquals(response.getStatusCode(),422,"Satatus code not match!");
         JsonPath jsonPath = response.jsonPath();
-        Assert.assertEquals(jsonPath.get("message"),"The password field is required.","Message not match!");
+        Assert.assertEquals(response.path("message"),"The password field is required.","Message not match!");
         Assert.assertEquals(jsonPath.get("errors.password[0]"),"The password field is required.","Error not match!");
     }
 
