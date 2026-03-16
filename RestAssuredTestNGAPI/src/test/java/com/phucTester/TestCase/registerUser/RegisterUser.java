@@ -1,6 +1,7 @@
 package com.phucTester.TestCase.registerUser;
 
 import globals.ConfigsGlobal;
+import globals.EndPointGlobal;
 import helpers.PropertiesHelper;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -17,7 +18,7 @@ public class RegisterUser {
         String requestBody = PropertiesHelper.getJsonValue(fileloginData, "success");
         RequestSpecification request = given();
         request.baseUri(ConfigsGlobal.URI)
-            .basePath("/register")
+            .basePath(EndPointGlobal.EP_REGISTER)
             .accept("application/json")
             .contentType("application/json")
             .body(requestBody);
@@ -36,7 +37,7 @@ public class RegisterUser {
             "}";
         RequestSpecification requestLogin = given();
         requestLogin.baseUri(ConfigsGlobal.URI)
-            .basePath("/login")
+            .basePath(EndPointGlobal.EP_REGISTER)
             .accept("application/json")
             .contentType("application/json")
             .body(body);
